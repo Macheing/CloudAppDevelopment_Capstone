@@ -37,5 +37,6 @@ You must complete all the labs to successfully complete the project.
 
 Overall App architecture:
 
-https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CD0321EN-SkillsNetwork/labs/module_1_static_pages/images/v2.capstone-dealership-architecture.png
+![image](https://user-images.githubusercontent.com/42636064/178106149-466b7a11-77bb-4531-b2ce-a5a55d9f560b.png)
+
 
