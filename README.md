@@ -35,8 +35,8 @@ You must complete all the labs to successfully complete the project.
 1. Add deployment artifacts to your application
 2. Deploy your application
 
-Overall App architecture:
+**Overall App architecture:**
+
 
 ![image](https://user-images.githubusercontent.com/42636064/178106149-466b7a11-77bb-4531-b2ce-a5a55d9f560b.png)
-
 
