@@ -4,3 +4,8 @@ gunicorn==20.1.0
 Pillow==8.0.1
 ibm-watson==5.1.0
 #ibmcloud cf install
+#Flask==1.1.2
+#Flask-WTF==0.14.3
+#ibm-watson==4.4.1
+#python-dotenv==0.13.0
+#pyJWT==1.7.1

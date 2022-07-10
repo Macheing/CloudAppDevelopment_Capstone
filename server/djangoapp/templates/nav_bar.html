@@ -2,38 +2,44 @@
  <html>
  <head>
     <meta charset="UTF-8">
-    <title></title>
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
  </head>
       <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Best Cars</a>
+            <a class="navbar-brand" href="{% url 'djangoapp:index' %}">Best Cars</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/djangoapp">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'djangoapp:index' %}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/djangoapp/about">About Us</a>
+                        <a class="nav-link" href="{% url 'djangoapp:about' %}">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/djangoapp/contact">Contact Us</a>
+                        <a class="nav-link" href="{% url 'djangoapp:contact' %}">Contact Us</a>
                     </li>
+                    <!-- Add more nav functions below-->
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     {% if user.is_authenticated %}
+                    <li>
+                        <a class="nav-link" style="color: rgb(43, 238, 238);" href="{% url 'djangoapp:add_review' %}"> Add Review</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" style="color: rgb(43, 238, 238);" href="#">{{ user.username }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  style="color: rgb(43, 238, 238);" href="logout/">Logout</a>
+                        <a class="nav-link"  style="color: rgb(43, 238, 238);" href="{% url 'djangoapp:logout' %}">Logout</a>
                     </li>
+                    
                     {% else %}
                         <li>
-                                <a class="btn btn-link" href="/djangoapp/login/">Sign In</a>
-                                <a class="btn btn-link" href="/djangoapp/signup/">Sign Up</a>
+                            <a class="btn btn-link" href="{% url 'djangoapp:login' %}">Login</a>
+                            <a class="btn btn-link" href="{% url 'djangoapp:registration' %}">Sign Up</a>
                         </li>
                     {% endif %}
                 </ul>

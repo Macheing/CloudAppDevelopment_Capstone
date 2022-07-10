@@ -44,9 +44,11 @@ def login_request(request):
             # If user is valid, call login method to login current user
             login(request, user)
             return redirect('/djangoapp/')
+        # user is presence
         else:
             # If not, return to login page again
             return render(request, 'djangoapp/user_login.html', context)
+    # serves get requests
     else:
         return render(request, 'djangoapp/user_login.html', context)
 
@@ -58,7 +60,7 @@ def logout_request(request):
     # Logout user in the request
     logout(request)
     # Redirect user back to course list view
-    return redirect('/djangoapp')
+    return redirect('/djangoapp/')
 
 # Create a `registration_request` view to handle sign up request
 def registration_request(request):
@@ -85,11 +87,11 @@ def registration_request(request):
         # If it is a new user
         if not user_exist:
             # Create user in auth_user table
-            user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name,
-                                            password=password)
+            user = User.objects.create_user(username=username, first_name=first_name, 
+                                            last_name=last_name, password=password)
             # Login the user and redirect to course list page
             login(request, user)
-            return redirect("/djangoapp/")
+            return redirect("/djangoapp/index.html")
         else:
             return render(request, 'djangoapp/registration.html', context)
 

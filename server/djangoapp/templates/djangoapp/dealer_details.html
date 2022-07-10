@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dealership Review</title>
-    {% load static %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-</head>
-
+    <head>
+        <meta charset="UTF-8">
+        <title>Dealership Review</title>
+        {% load static %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </head>
     <body>
+        <!--Add a nav bar here -->
+        {% include 'nav_bar.html' %}
 
-    <!--Add a nav bar here -->
-    {% include 'nav_bar.html' %}
-
-    <!-- Add reviews as cards -->
+        <!-- Add reviews as cards -->
+        <main class="container" style="padding: 3%;">
+            <div class="card-columns">
+                {% for review in reviews %}
+                    <div class="card" style="height: 300px; overflow: scroll; overflow-x: hidden;">
+                        <img src="{{MEDIA_URL}}/emoji/{{review.sentiment}}.png" class="card-img-center" style="height: 100px; width: 100px; margin-left: 35%; margin-bottom: 5%; margin-top: 2%;">
+                        <div class="card-body" style="text-align: center;">
+                            <h5 class="card-title">{{ review.car_make }}, {{ review.car_model }}</h5>
+                            <h5 class="card-title">{{ review.car_year }}</h5>
+                            <p class="card-text">{{ review.review }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </main>
 
     </body>
-
 </html>
