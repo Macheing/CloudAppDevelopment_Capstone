@@ -3,3 +3,4 @@ Django
 gunicorn==20.1.0
 Pillow==8.0.1
 ibm-watson==5.1.0
+#ibmcloud cf install

@@ -1,11 +1,11 @@
   applications:
-  - name: djangoapp
+  - name: django_dealer_app
     routes:
-      - route: $HOST.$DOMAIN
+      - route: macheingnyany.mybluemix.net
     memory: 128M
     buildpack: python_buildpack
-  - name: djangoapp-nginx
+  - name: django_dealer_app-nginx
     routes:
-      - route: $HOST.$DOMAIN/static
+      - route: macheingnyany.us-south.cf.appdomain.cloud/static
     memory: 128M
     buildpack: staticfile_buildpack
