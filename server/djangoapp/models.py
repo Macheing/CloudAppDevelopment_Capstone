@@ -49,7 +49,7 @@ class CarModel(models.Model):
                     (HATCHBACK, 'Hatchback'),
                     (CONVERTIBLE, 'Convertible'),
                     (MINIVAN, 'Minivan'),
-                    (OTHERS, 'Others)
+                    (OTHERS, 'Others')
                   ]
       make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
       name = models.CharField(null=True, max_length=50, default='car name')
@@ -62,27 +62,27 @@ class CarModel(models.Model):
 
 # <HINT> Create a plain Python class `CarDealer` to hold dealer data
 class CarDealer:              
-      def __init__(self, full_name ,short_name, st, address, city,  id, lat, long, state, zip):
-                     # Dealer Full Name
-                      self.full_name = full_name        
-                      # Dealer short name
-                      self.short_name = short_name
-                      # State Code
-                      self.st = st
-                      # Dealer address
-                      self.address = address
-                      # Dealer city
-                      self.city = city
-                      # Dealer id
-                      self.id = id
-                      # Location lat
-                      self.lat = lat
-                      # Location long
-                      self.long = long
-                      # Dealer state
-                      self.state = state
-                      # Dealer zip
-                      self.zip = zip
+        def __init__(self, full_name ,short_name, st, address, city,  id, lat, long, state, zip):
+            # Dealer Full Name
+            self.full_name = full_name        
+            # Dealer short name
+            self.short_name = short_name
+            # State Code
+            self.st = st
+            # Dealer address
+            self.address = address
+            # Dealer city
+            self.city = city
+            # Dealer id
+            self.id = id
+            # Location lat
+            self.lat = lat
+            # Location long
+            self.long = long
+            # Dealer state
+            self.state = state
+            # Dealer zip
+            self.zip = zip
                      
         def __str__(self):
                      return "Dealer name: " + self.full_name
@@ -108,7 +108,7 @@ class DealerReview:
                 return json.dumps(self, default=lambda o: o.__dict__, sort__keys=True, indent=4)
  
  # plain python class for review posts                   
- class ReviewPost:
+class ReviewPost:
         def __init__(self, dealership, name, purchase, review, purchase_date, car_make,car_model,car_year):
                     self.dealership = dealership
                     self.name = name
