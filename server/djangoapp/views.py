@@ -3,7 +3,8 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, render, redirect
 # from .models import related models
-from .restapis import get_dealers_from_cf #, get_dealer_reviews_from_cf, get_dealer_by_id, post_request
+from . import restapis 
+from . import models
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from datetime import datetime
@@ -102,7 +103,7 @@ def get_dealerships(request):
     #context = {"dealerships": restapis.get_dealers_from_cf(url)}
     context = {}
     if request.method == "GET":
-        url = 'https://5a216c9a.us-south.apigw.appdomain.cloud/api/dealership'
+        url = 'https://c16cf70b.us-south.apigw.appdomain.cloud/api/dealership'
         # Get dealers from the URL
         dealerships = get_dealers_from_cf(url)
         # Concat all dealer's short name
@@ -118,8 +119,8 @@ def get_dealer_details(request, dealer_id):
     '''displays dealer details info for the dealership'''
     context = {}
     if request.method == "GET":
-       # url = ''
-       # context = {"reviews":  restapis.get_dealer_reviews_by_id_from_cf(url, dealer_id)}
+        url = 'https://c16cf70b.us-south.apigw.appdomain.cloud/api/review'
+        context = {"reviews":  restapis.get_dealer_reviews_by_id_from_cf(url, dealer_id)}
         return render(request, 'djangoapp/dealer_details.html', context)
 
 # Create a `add_review` view to submit a review
